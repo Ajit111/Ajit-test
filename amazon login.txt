@@ -1,0 +1,28 @@
+package Ajit_test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Amazon_login {
+
+	public static void main(String[] args)  {									
+		
+		System.setProperty("webdriver.chrome.driver","resource\\chromedriver.exe");					
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		String baseUrl = "https://www.amazon.in";				
+		driver.get(baseUrl);
+		
+		driver.findElement(By.xpath("//span[@id='nav-link-accountList-nav-line-1']")).click();
+		driver.findElement(By.xpath("//input[@id='ap_email']")).sendKeys("kantkrishna2016@gmail.com");
+		driver.findElement(By.xpath("//input[@id='continue']")).click();
+		driver.findElement(By.xpath("//input[@id='ap_password']")).sendKeys("kant_9934");
+		
+		driver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
+		//driver.navigate().to("http://demo.guru99.com/selenium/deprecated.html");
+		
+		driver.close();
+}
+
+}
